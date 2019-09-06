@@ -1,0 +1,9 @@
+FROM balenalib/%%RESIN_MACHINE_NAME%%-debian
+
+RUN install_packages alsa-utils
+
+WORKDIR usr/src/app
+
+COPY alsa.sh ./
+
+CMD ["bash", "alsa.sh"]
